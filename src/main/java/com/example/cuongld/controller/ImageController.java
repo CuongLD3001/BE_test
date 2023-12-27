@@ -1,6 +1,8 @@
 package com.example.cuongld.controller;
 
 import com.example.cuongld.model.Image;
+import com.example.cuongld.model.dto.ImageDTO;
+import com.example.cuongld.model.dto.ImageResponse;
 import com.example.cuongld.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,9 +19,9 @@ public class ImageController {
     private ImageService imageService;
 
     @GetMapping
-    public ResponseEntity<List<Image>> getAllImages() {
+    public ImageResponse getAllImages() {
         List<Image> images = imageService.getAllImages();
-        return new ResponseEntity<>(images, HttpStatus.OK);
+        return new ImageResponse(images);
     }
 
     @PostMapping
