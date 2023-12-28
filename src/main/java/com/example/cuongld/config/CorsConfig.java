@@ -14,7 +14,7 @@ public class CorsConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("http://localhost:8081"); // Thay đổi địa chỉ của ứng dụng Vue.js nếu cần
+        config.addAllowedOrigin("http://localhost:8080"); // Thay đổi địa chỉ của ứng dụng Vue.js nếu cần
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
         source.registerCorsConfiguration("/**", config);
